@@ -8,13 +8,13 @@ $("#dotFlex").hide();
 
 function drawDots(){
     for(let i = 0; i <= weeksInYear; i++){
-        if (i % 52 == 0){
-            dot = document.createElement('week_dot_year')
-        }
-        else if (i <= weeksOver){
+        // if (i % 52 == 0){
+        //     dot = document.createElement('week_dot_year')
+        // }
+        if (i <= weeksOver){
             dot = document.createElement('week_dot_full')
         }
-        else if (i == 4680){
+        else if (i == weeksInYear){
             dot = document.createElement('week_dot_death')
         }
         else{
@@ -29,7 +29,7 @@ function drawDots(){
 function showDots(dot){  
     dots = document.getElementsByClassName('dot')
     for(let i = 0; i < dots.length; i++){
-        $(dots[i]).delay(i*1).fadeIn(500)
+        $(dots[i]).delay(i*1).fadeIn(300)
     }
 }
 
@@ -39,8 +39,13 @@ $("#intro-flex").click(function(){
         $("#top-bar").fadeIn();
         drawDots()
         $("#dotFlex").show(function(){ 
-                showDots()
-            })
+            showDots()
+        })
     })
+})
+
+$('#input-button').click(function(){
+    $('#input-flex').fadeOut()
+    $('#intro-flex').fadeIn()
 })
 })

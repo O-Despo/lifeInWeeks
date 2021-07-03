@@ -1,0 +1,82 @@
+body{
+    margin: 0;
+    background-color: black;
+}
+
+#dotFlex{
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: space-around;
+    margin: 0vh 5vw 5vh 5vw;
+    width: 90vw;
+    display: none;
+}
+
+#top-bar{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    display: none;
+
+}
+
+#intro-flex{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.title{
+    color: white;
+    font-size: 5vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+week_dot_full{
+    width: 1.1vh;
+    height: 1.1vh;
+    margin: 0.2vh 0.2vw 0.2vh 0.2vw;
+    border-radius: 1.4vh;
+    background-color: rgb(255, 255, 255);
+}
+
+week_dot_death{
+    width: 1.1vh;
+    height: 1.1vh;
+    margin: 0.2vh 0.2vw 0.2vh 0.2vw;
+    border-radius: 1.4vh;
+    background-color: rgb(255, 0, 0);
+}
+
+week_dot_year {
+    width: 1.1vh;
+    height: 1.1vh;
+    margin: 0.2vh 0.2vw 0.2vh 0.2vw;
+    border-radius: 1.4vh;
+    background-color: rgb(102, 102, 102);
+}
+
+week_dot{
+    width: 1.1vh;
+    height: 1.1vh;
+    margin: 0.2vh 0.2vw 0.2vh 0.2vw;
+    border-radius: 1.4vh;
+    /* border: solid;
+    border-width: 2px; */
+    background-color: rgb(61, 61, 61);
+    border-color: white;
+}
+
+week_dot_large{
+    width: 20vh;
+    height: 20vh;
+    border-radius: 20vh;
+    background-color: rgb(195, 0, 255);
+    border-color: white;
+    opacity: 0.5;
+}

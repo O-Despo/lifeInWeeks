@@ -1,8 +1,10 @@
 $(function(){
     dotFlex = document.getElementById("dotFlex")
 
-weeksInYear = 4160
+weeksInYear = 4160 - 884
 weeksOver = 844
+
+startWeekColor = 61
 
 $("#dotFlex").hide();
 $("#intro-flex").hide();
@@ -23,24 +25,39 @@ function drawDots(){
         }
         dot.classList.add("dot")
         $(dot).hide()
-        dotFlex.appendChild(dot)        
+        dotFlex.appendChild(dot)
     }
+}
+
+let cursor = null;
+
+function cursorBlink(){
+    $(cursor).animate({
+        backgroundColor: 'white'
+    }, 500).delay(500).animate({
+        backgroundColor: 'black'
+    }, 500)
 }
 
 function fillIn(){
     dots = document.getElementsByClassName("dot")
     console.log('here')
     for(let i = 0; i < weeksOver; i++){
-        dots[i].classList.remove('weekDot')
-        dots[i].classList.add('weekDotFull')
+        $(dots[i]).delay(i*6).animate({
+            backgroundColor: 'white',
+        }, 600);
     }
+
+    // sets a timer to make the last dot look like a cursor
+    cursor = dots[weeksOver]
+    setInterval(cursorBlink, 500)
 }
 
 function showDots(){  
     dots = document.getElementsByClassName('dot')
     for(let i = 0; i < dots.length; i++){
         if(i === dots.length - 1){
-            $(dots[i]).delay(i*1).fadeIn(300, function(){
+            $(dots[i]).delay(i*1).fadeIn(200, function(){
                 fillIn()
             })
 
@@ -62,7 +79,7 @@ $("#intro-flex").click(function(){
     })
 })
 
-$('#input-button').click(function(){
+$('#input-flex').click(function(){
     $('#input-flex').fadeOut()
     $('#intro-flex').fadeIn()
 })

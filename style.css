@@ -12,15 +12,13 @@ body{
     align-content: space-around;
     margin: 0vh 5vw 5vh 5vw;
     width: 90vw;
-    display: none;
+    /* display: none; */
 }
 
 #top-bar{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    display: none;
-
 }
 
 #intro-flex{
@@ -76,7 +74,7 @@ week_dot_large{
     width: 20vh;
     height: 20vh;
     border-radius: 20vh;
-    background-color: rgb(195, 0, 255);
+    background-color: rgb(63, 63, 63);
     border-color: white;
     opacity: 0.5;
 }

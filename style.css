@@ -1,7 +1,10 @@
 body{
-    margin: 0;
     background-color: black;
-    color: white;
+    overflow: hidden;
+}
+
+html body {
+    background-color: rgba(0,0,0,1.00);
 }
 
 #dotFlex{
@@ -22,13 +25,24 @@ body{
     justify-content: center;
 }
 
-.flexContainer{
+.flexContainerCol{
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    align-content: center;
     height: 100vh;
 }
+
+.flexContainerRow{
+    width: 50vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
 
 .button {
     height: 5vh;
@@ -48,9 +62,9 @@ body{
 }
 
 .textInput{
+    margin: 1vh;
     color: white;
-    font-size: 100%;
-    height: 5vh;
+    font-size: 2vh;
     width: 6vw;
     border-radius: 1vh;
     border-width: 2px;
@@ -64,7 +78,7 @@ body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
 
-week_dot_full{
+.weekDotFull{
     width: 1.1vh;
     height: 1.1vh;
     margin: 0.2vh 0.2vw 0.2vh 0.2vw;
@@ -72,7 +86,7 @@ week_dot_full{
     background-color: rgb(255, 255, 255);
 }
 
-week_dot_death{
+.weekDotDeath{
     width: 1.1vh;
     height: 1.1vh;
     margin: 0.2vh 0.2vw 0.2vh 0.2vw;
@@ -80,7 +94,7 @@ week_dot_death{
     background-color: rgb(255, 0, 0);
 }
 
-week_dot_year {
+.weekDotYear {
     width: 1.1vh;
     height: 1.1vh;
     margin: 0.2vh 0.2vw 0.2vh 0.2vw;
@@ -88,7 +102,7 @@ week_dot_year {
     background-color: rgb(102, 102, 102);
 }
 
-week_dot{
+.weekDot{
     width: 1.1vh;
     height: 1.1vh;
     margin: 0.2vh 0.2vw 0.2vh 0.2vw;
@@ -99,7 +113,7 @@ week_dot{
     border-color: white;
 }
 
-week_dot_large{
+.week_dot_large{
     width: 20vh;
     height: 20vh;
     border-radius: 20vh;

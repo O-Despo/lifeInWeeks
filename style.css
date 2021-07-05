@@ -1,9 +1,10 @@
 body{
-    background-color: black;
-    /* overflow: hidden; */
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+    scrollbar-base-color: blue;
 }
-
-html body {
+/* html body {
     background-color: rgba(0,0,0,1.00);
 }
 
@@ -17,8 +18,12 @@ html body {
     margin: 0vh 5vw 5vh 5vw;
     width: 90vw;
     /* display: none; */
-}
 
+/* canvas{
+    height: 100vh;
+    width: 100wv;
+} */
+/* 
 #top-bar{
     display: flex;
     flex-direction: row;
@@ -109,7 +114,7 @@ html body {
     border-radius: 1.4vh;
     /* border: solid;
     border-width: 2px; */
-    background-color: rgb(61, 61, 61);
+    /* background-color: rgb(61, 61, 61);
     border-color: white;
 }
 
@@ -120,4 +125,4 @@ html body {
     background-color: rgb(63, 63, 63);
     border-color: white;
     opacity: 0.5;
-}
+} */

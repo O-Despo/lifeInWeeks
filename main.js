@@ -10,11 +10,11 @@ $("#dotFlex").hide();
 $("#intro-flex").hide();
 $("#main-content").hide();
 
+var dotsDrawn = false;
+var cursor = null;
+
 function drawDots(){
     for(let i = 0; i <= weeksInYear; i++){
-        // if (i % 52 == 0){
-        //     dot = document.createElement('week_dot_year')
-        // }
         if (i == weeksInYear){
             dot = document.createElement('div')
             dot.classList.add('weekDotYear')
@@ -29,7 +29,6 @@ function drawDots(){
     }
 }
 
-let cursor = null;
 
 function cursorBlink(){
     $(cursor).animate({
@@ -53,16 +52,24 @@ function fillIn(){
     setInterval(cursorBlink, 500)
 }
 
-function showDots(){  
+function showDots(){ 
+    dotsDrawn = true
     dots = document.getElementsByClassName('dot')
     for(let i = 0; i < dots.length; i++){
         if(i === dots.length - 1){
             $(dots[i]).delay(i*1).fadeIn(200, function(){
                 fillIn()
             })
-
         }
         else{$(dots[i]).delay(i*1).fadeIn(300)}
+    }
+
+}
+
+function removeDots(dotsToRemove){
+    for(let i = 0; i < dotsToRemove.length; i++){
+        dot = dotsToRemove[dotsToRemove - 1] 
+        $(dot).delay(i * 100).fadeOut(300)
     }
 }
 
@@ -72,10 +79,13 @@ $("#intro-flex").click(function(){
     $("#intro-flex").fadeOut("slow", function(){
         $("#top-bar").fadeIn();
         $("#main-content").show();
-        drawDots()
-        $("#dotFlex").show(function(){ 
-            showDots()
-        })
+        if(dotsDrawn == false){
+            drawDots()
+            dotsDrawn = true
+        $("#dotFlex").show(function(){
+                showDots()
+            })
+        }
     })
 })
 

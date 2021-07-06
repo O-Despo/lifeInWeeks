@@ -1,1 +1,0 @@
-// Manages pages with jquery

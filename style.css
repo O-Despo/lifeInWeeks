@@ -2,7 +2,7 @@ body{
     background-color: black;
     /* overflow: hidden; */
     margin: 0%;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Open Sans', sans-serif;
 }
 
 html body {
@@ -74,7 +74,7 @@ html body {
 }
 
 h1{
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .button:hover {
@@ -98,10 +98,10 @@ h1{
 
 .title{
     color: white;
-    font-size: 5vh;
-    font-family: 'Times New Roman', Times, serif;
+    font-size: 7vh;
+    font-family: 'Open Sans', sans-serif;
     font-weight: bold;
-    margin: 0%;
+    margin: 5vh;
 }
 
 .weekDotFull{

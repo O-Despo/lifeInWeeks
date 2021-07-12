@@ -73,24 +73,35 @@ var percentOver;
 function increasePercent(){
     if (currentPercent !== percentOver){
        currentPercent += 1
-       $('#percentageComplete').text(String(currentPercent + "%")) 
+    //    $('#percentageComplete').text(String(currentPercent + "%")) 
+       $('#percentageComplete').text(String("Your life is " + currentPercent + "% complete")) 
        setTimeout(increasePercent, 200)
     }
 }
 
-weeksInYear = 4160 - 884
-weeksOver = 844
+let weeksInYear = 4160
+let weeksOver;
 
-startWeekColor = 61
 $("#numOfWeekPage").hide();
 $("#dataEntryPage").hide();
 $("#mainContentPage").hide();
 $("#settingPage").hide()
 
 
+$('#numOfWeekTitle').click(function(){
+    $('#numOfWeekTitle').fadeOut(500, function(){
+        $("#numOfWeekLive").fadeIn(500)
+    })
+})
 
+
+$('#numOfWeekLive').click(function(){
+    $('#numOfWeekLive').fadeOut(500, function(){
+        $("#numOfWeekPassed").fadeIn(500)
+    })
+})
 //After number of weeks is displayed move to main content and draw dots
-$("#numOfWeekPage").click(function(){
+$("#numOfWeekPassed").click(function(){
     $("#numOfWeekPage").fadeOut("slow", function(){
         $("#mainContentPage").fadeIn();
         $("#dotFlex").show();
@@ -112,6 +123,13 @@ $("#inputButton").click(function(){
     percentOver = Math.floor(weeksOver / (weeksInYear/100))
     $("#dataEntryPage").fadeOut("slow", function(){
         $("#numOfWeekPage").fadeIn();
+        //setting contents of what shows later
+        $("#numOfWeekLive").hide().text(
+            "You will on live through " + weeksInYear + " weeks"
+        )
+        $("#numOfWeekPassed").hide().text(
+            "You have on lived through " + weeksOver + " weeks"
+        )
     })
 })
 

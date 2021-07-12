@@ -25,6 +25,7 @@ html body {
     flex-direction: row;
     justify-content: center;
     align-content: center;
+    margin: 1vh;
 }
 
 .flexContainerCol{
@@ -100,6 +101,7 @@ h1{
     font-size: 5vh;
     font-family: 'Times New Roman', Times, serif;
     font-weight: bold;
+    margin: 0%;
 }
 
 .weekDotFull{

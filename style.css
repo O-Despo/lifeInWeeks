@@ -1,6 +1,7 @@
 body{
     background-color: black;
     /* overflow: hidden; */
+    margin: 0%;
 }
 
 html body {
@@ -14,9 +15,8 @@ html body {
     flex-wrap: wrap;
     justify-content: flex-start;
     align-content: space-around;
-    margin: 0vh 5vw 5vh 5vw;
+    margin: 0vh 5vw 4vh 5vw;
     width: 90vw;
-    /* display: none; */
 }
 
 #top-bar{
@@ -72,6 +72,10 @@ html body {
     background-color: transparent;
 }
 
+#title-1{
+    margin: 2vh;
+}
+
 .title{
     color: white;
     font-size: 5vh;
@@ -79,32 +83,32 @@ html body {
 }
 
 .weekDotFull{
-    width: 1.1vh;
-    height: 1.1vh;
+    width: 1.2vh;
+    height: 1.2vh;
     margin: 0.2vh 0.2vw 0.2vh 0.2vw;
     border-radius: 1.4vh;
     background-color: rgb(255, 255, 255);
 }
 
 .weekDotDeath{
-    width: 1.1vh;
-    height: 1.1vh;
+    width: 1.2vh;
+    height: 1.2vh;
     margin: 0.2vh 0.2vw 0.2vh 0.2vw;
     border-radius: 1.4vh;
     background-color: rgb(255, 0, 0);
 }
 
 .weekDotYear {
-    width: 1.1vh;
-    height: 1.1vh;
+    width: 1.2vh;
+    height: 1.2vh;
     margin: 0.2vh 0.2vw 0.2vh 0.2vw;
     border-radius: 1.4vh;
     background-color: rgb(102, 102, 102);
 }
 
 .weekDot{
-    width: 1.1vh;
-    height: 1.1vh;
+    width: 1.2vh;
+    height: 1.2vh;
     margin: 0.2vh 0.2vw 0.2vh 0.2vw;
     border-radius: 1.4vh;
     /* border: solid;

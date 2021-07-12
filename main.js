@@ -1,7 +1,7 @@
 $(function(){
     dotFlex = document.getElementById("dotFlex")
 
-weeksInYear = 4160 - 884
+weeksInYear = 4160
 weeksOver = 844
 
 startWeekColor = 61
@@ -89,7 +89,10 @@ $("#intro-flex").click(function(){
     })
 })
 
-$('#input-flex').click(function(){
+$('#input-button').click(function(){
+    let userAge = $('#fAge').val()
+    weeksOver = userAge * 52
+    console.log(userAge)
     $('#input-flex').fadeOut()
     $('#intro-flex').fadeIn()
 })

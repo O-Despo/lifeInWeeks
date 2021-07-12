@@ -96,12 +96,29 @@ h1{
     margin: 2vh;
 }
 
-.title{
+.material-icons{
+    color: white;
+}
+
+#downArrow{
+    font-size: 5vh;
+}
+
+.title-1{
     color: white;
     font-size: 7vh;
     font-family: 'Open Sans', sans-serif;
     font-weight: bold;
-    margin: 5vh;
+    margin: 3vh;
+}
+
+
+.title-2{
+    color: white;
+    font-size: 7vh;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    margin: 3vh;
 }
 
 .weekDotFull{

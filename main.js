@@ -125,10 +125,10 @@ $("#inputButton").click(function(){
         $("#numOfWeekPage").fadeIn();
         //setting contents of what shows later
         $("#numOfWeekLive").hide().text(
-            "You will on live through " + weeksInYear + " weeks"
+            "You will live through " + weeksInYear + " weeks"
         )
         $("#numOfWeekPassed").hide().text(
-            "You have on lived through " + weeksOver + " weeks"
+            "You have already lived " + weeksOver + " weeks"
         )
     })
 })

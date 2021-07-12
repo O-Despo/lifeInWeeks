@@ -1,23 +1,15 @@
 $(function(){
     dotFlex = document.getElementById("dotFlex")
 
-weeksInYear = 4160
-weeksOver = 844
-
-startWeekColor = 61
-
-$("#dotFlex").hide();
-$("#intro-flex").hide();
-$("#main-content").hide();
-
-var dotsDrawn = false;
-var cursor = null;
-
-function drawDots(){
-    for(let i = 0; i <= weeksInYear; i++){
-        if (i == weeksInYear){
-            dot = document.createElement('div')
-            dot.classList.add('weekDotYear')
+    
+    var dotsDrawn = false;
+    var cursor = null;
+    
+    function drawDots(){
+        for(let i = 0; i <= weeksInYear; i++){
+            if (i == weeksInYear){
+                dot = document.createElement('div')
+                dot.classList.add('weekDotYear')
         }
         else{
             dot = document.createElement('div')
@@ -46,7 +38,7 @@ function fillIn(){
             backgroundColor: 'white',
         }, 600);
     }
-
+    
     // sets a timer to make the last dot look like a cursor
     cursor = dots[weeksOver]
     setInterval(cursorBlink, 500)
@@ -63,7 +55,7 @@ function showDots(){
         }
         else{$(dots[i]).delay(i*1).fadeIn(300)}
     }
-
+    
 }
 
 function removeDots(dotsToRemove){
@@ -73,27 +65,43 @@ function removeDots(dotsToRemove){
     }
 }
 
+weeksInYear = 4160 - 884
+weeksOver = 844
+
+startWeekColor = 61
+$("#numOfWeekPage").hide();
+$("#dataEntryPage").hide();
+$("#mainContentPage").hide();
+$("#settingPage").hide()
 
 
-$("#intro-flex").click(function(){
-    $("#intro-flex").fadeOut("slow", function(){
-        $("#top-bar").fadeIn();
-        $("#main-content").show();
+
+//After number of weeks is displayed move to main content and draw dots
+$("#numOfWeekPage").click(function(){
+    $("#numOfWeekPage").fadeOut("slow", function(){
+        $("#mainContentPage").fadeIn();
+        $("#dotFlex").show();
         if(dotsDrawn == false){
             drawDots()
             dotsDrawn = true
-        $("#dotFlex").show(function(){
+            $("#dotFlex").show(function(){
                 showDots()
             })
         }
     })
 })
 
-$('#input-button').click(function(){
-    let userAge = $('#fAge').val()
-    weeksOver = userAge * 52
-    console.log(userAge)
-    $('#input-flex').fadeOut()
-    $('#intro-flex').fadeIn()
+//After data input show number of weeks page
+$("#dataEntryPage").click(function(){
+    $("#dataEntryPage").fadeOut("slow", function(){
+        $("#numOfWeekPage").fadeIn();
+    })
+})
+
+//After warning page fade to data entry page 
+$("#wanring3").click(function(){
+    $("#warningPage").fadeOut("slow", function(){
+        $("#dataEntryPage").fadeIn();
+    })
 })
 })

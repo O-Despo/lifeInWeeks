@@ -2,6 +2,7 @@ body{
     background-color: black;
     /* overflow: hidden; */
     margin: 0%;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 html body {
@@ -19,10 +20,11 @@ html body {
     width: 90vw;
 }
 
-#top-bar{
+#topBar{
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-content: center;
 }
 
 .flexContainerCol{
@@ -43,6 +45,19 @@ html body {
     justify-content: center;
 }
 
+.warningPage{
+    height: 5vh;
+    color: white;
+    text-align: center;
+}
+
+#warningPage{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    height: 100vh;
+}
 
 .button {
     height: 5vh;
@@ -55,6 +70,10 @@ html body {
     border-style: solid;
     border-color:rgb(255, 0, 0);
     transition: 1s;
+}
+
+h1{
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .button:hover {
@@ -79,7 +98,8 @@ html body {
 .title{
     color: white;
     font-size: 5vh;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
 }
 
 .weekDotFull{
@@ -111,8 +131,6 @@ html body {
     height: 1.2vh;
     margin: 0.2vh 0.2vw 0.2vh 0.2vw;
     border-radius: 1.4vh;
-    /* border: solid;
-    border-width: 2px; */
     background-color: rgb(61, 61, 61);
     border-color: white;
 }

@@ -32,11 +32,13 @@ function cursorBlink(){
 
 function fillIn(){
     dots = document.getElementsByClassName("dot")
-    console.log('here')
     for(let i = 0; i < weeksOver; i++){
         $(dots[i]).delay(i*6).animate({
             backgroundColor: 'white',
         }, 600);
+        if(i == weeksOver - 1){
+            increasePercent()
+        }
     }
     
     // sets a timer to make the last dot look like a cursor
@@ -62,6 +64,17 @@ function removeDots(dotsToRemove){
     for(let i = 0; i < dotsToRemove.length; i++){
         dot = dotsToRemove[dotsToRemove - 1] 
         $(dot).delay(i * 100).fadeOut(300)
+    }
+}
+
+var currentPercent = 0
+var percentOver;
+ 
+function increasePercent(){
+    if (currentPercent !== percentOver){
+       currentPercent += 1
+       $('#percentageComplete').text(String(currentPercent + "%")) 
+       setTimeout(increasePercent, 200)
     }
 }
 
@@ -92,7 +105,11 @@ $("#numOfWeekPage").click(function(){
 })
 
 //After data input show number of weeks page
-$("#dataEntryPage").click(function(){
+$("#inputButton").click(function(){
+    //Age input to weeks over
+    var inputAge = $('#ageEntry').val()
+    weeksOver = inputAge * 52
+    percentOver = Math.floor(weeksOver / (weeksInYear/100))
     $("#dataEntryPage").fadeOut("slow", function(){
         $("#numOfWeekPage").fadeIn();
     })

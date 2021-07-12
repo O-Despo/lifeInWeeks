@@ -100,8 +100,14 @@ $('#numOfWeekLive').click(function(){
         $("#numOfWeekPassed").fadeIn(500)
     })
 })
+
+$('#numOfWeekPassed').click(function(){
+    $('#numOfWeekPassed').fadeOut(500, function(){
+        $("#numOfWeekLeft").fadeIn(500)
+    })
+})
 //After number of weeks is displayed move to main content and draw dots
-$("#numOfWeekPassed").click(function(){
+$("#numOfWeekLeft").click(function(){
     $("#numOfWeekPage").fadeOut("slow", function(){
         $("#mainContentPage").fadeIn();
         $("#dotFlex").show();
@@ -129,6 +135,9 @@ $("#inputButton").click(function(){
         )
         $("#numOfWeekPassed").hide().text(
             "You have already lived " + weeksOver + " weeks"
+        )
+        $("#numOfWeekLeft").hide().text(
+            "That means you have " + (weeksInYear - weeksOver) + " weeks left"
         )
     })
 })

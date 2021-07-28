@@ -31,7 +31,7 @@ function cursorBlink(){
 
 function showDots(){ 
     //Fade in all dots so user can see grey ones
-    dotsDrawn = true
+    console.log("showDots")
     dots = document.getElementsByClassName('dot')
     for(let i = 0; i < dots.length; i++){
         if(i === dots.length - 1){
@@ -75,96 +75,57 @@ function increasePercent(){
     }
 }
 
-function animateArrow(){
-    
+function checkForFunction(pageObj){
+	console.log(pageObj)
+	switch(pageObj){
+		case $("#mainContentPage")[0]:
+			$("#dotFlex").show();
+			if(dotsDrawn === false){
+				drawDots()
+				dotsDrawn = true
+				showDots()
+			}
+			console.log("hele")
+			break
+		case $('#numOfWeekPage')[0]:
+			var inputAge = $('#ageEntry').val()
+			weeksOver = inputAge * 52
+			percentOver = Math.floor(weeksOver / (weeksInYear/100))
+			//setting contents of what shows later
+			$("#numOfWeekLive").text(
+				"You will live through " + weeksInYear + " weeks"
+			)
+			$("#numOfWeekPassed").text(
+				"You have already lived " + weeksOver + " weeks"
+			)
+			$("#numOfWeekLeft").text(
+			    "That means you have " + (weeksInYear - weeksOver) + " weeks left"
+			)
+			break
+	}
 }
-
-
-
-$("#numOfWeekPage").hide();
-$("#dataEntryPage").hide();
-$("#mainContentPage").hide();
-$("#settingPage").hide()
-
+			
 let index = 0;
 function pageTransition(){
     $(pageArray[index]).fadeOut(500, function(){
-        index += 1
-        console.log(index)
-        $(pageArray[index]).fadeIn(500)
-    })
-}
+	index += 1
+	console.log(index)
+	$(pageArray[index]).fadeIn(500)
+	checkForFunction(pageArray[index])
+    }
+)}
 
-pageArray = document.getElementsByClassName("page")
-window.addEventListener('keypress', pageTransition)
+var pageArray = document.getElementsByClassName("page")
 
-
-$('#numOfWeekTitle').click(function(){
-    $('#numOfWeekTitle').fadeOut(500, function(){
-        $("#numOfWeekLive").fadeIn(500)
-    })
-})
-
-
-$('#numOfWeekLive').click(function(){
-    $('#numOfWeekLive').fadeOut(500, function(){
-        $("#numOfWeekPassed").fadeIn(500)
-    })
-})
-
-$('#numOfWeekPassed').click(function(){
-    $('#numOfWeekPassed').fadeOut(500, function(){
-        $("#numOfWeekLeft").fadeIn(500)
-    })
-})
-
-$('#numOfWeekLeft').click(function(){
-    $("#downArrow").fadeOut("slow")
-    $('#numOfWeekLeft').fadeOut(500)
-})
-
-//After number of weeks is displayed move to main content and draw dots
-$("#weekExample").click(function(){
-    $("#numOfWeekPage").fadeOut("slow", function(){
-        $("#mainContentPage").fadeIn();
-        $("#dotFlex").show();
-        if(dotsDrawn == false){
-            drawDots()
-            dotsDrawn = true
-            $("#dotFlex").show(function(){
-                showDots()
-            })
-        }
-    })
-})
-
-//After data input show number of weeks page
-$("#inputButton").click(function(){
-    //Age input to weeks over
-    var inputAge = $('#ageEntry').val()
-    weeksOver = inputAge * 52
-    percentOver = Math.floor(weeksOver / (weeksInYear/100))
-    $("#dataEntryPage").fadeOut("slow", function(){
-        $("#numOfWeekPage").fadeIn();
-        //setting contents of what shows later
-        $("#numOfWeekLive").hide().text(
-            "You will live through " + weeksInYear + " weeks"
-            )
-            $("#numOfWeekPassed").hide().text(
-                "You have already lived " + weeksOver + " weeks"
-                )
-                $("#numOfWeekLeft").hide().text(
-                    "That means you have " + (weeksInYear - weeksOver) + " weeks left"
-                    )
-                })
-            })
-            
-            //After warning page fade to data entry page 
-            $("#wanring3").click(function(){
-                $("#warningPage").fadeOut("slow", function(){
-                    $("#dataEntryPage").fadeIn();
-                })
-            })
-$(function(){
+$(function(){	
+	window.addEventListener('keypress', event => {
+		if (event.keyCode == 32){	
+			pageTransition()
+		}
+	})
+	for (let i = 0; i < pageArray.length; i++){
+		$(pageArray[i]).hide()
+	}
+	$(pageArray[0]).show()
 
 })
